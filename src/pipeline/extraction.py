@@ -14,7 +14,7 @@ class Extraction(BaseStep):
     __MISSING_FEATURES_ERROR: str = "Some required features are missing from the dataset."
 
     # @override
-    def run(self) -> DataFrame:
+    def run(self, _: None = None) -> DataFrame:
         """Executes the extraction step by loading data from the specified source.
 
         Reads a CSV file from the path defined in the extraction configuration,
