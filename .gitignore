@@ -2,3 +2,4 @@ venv/
 data/*.parquet
 .venv/
 models/
+__pycache__/
