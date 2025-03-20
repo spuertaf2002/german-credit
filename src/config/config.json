@@ -1,0 +1,38 @@
+{
+    "extraction" : {
+        "source" : "https://github.com/JoseRZapata/Data_analysis_notebooks/raw/refs/heads/main/data/datasets/datos_credito_alemania_data.csv",
+        "features" : [
+            "Duration", 
+            "Credit amount", 
+            "Purpose",
+            "Job",
+            "Sex",
+            "Saving accounts", 
+            "Housing", 
+            "Risk", 
+            "Age", 
+            "Unnamed: 0"
+        ]
+    },
+    "transformation" : {
+        "drop_duplicates": {
+            "enabled": true,
+            "subset": ["Unnamed: 0"],
+            "keep": "first",
+            "drop_subset_columns": true
+        },
+        "numeric_features" : {
+            "Duration" : "Int64",
+            "Credit amount" : "Int64",
+            "Age" : "Int64"
+        },
+        "categorical_features" : {
+            "Purpose" : null,
+            "Job" : [0, 1, 2, 3],
+            "Sex" : null,
+            "Saving accounts" : ["little", "quite rich", "rich"],
+            "Housing" : null,
+            "Risk" : ["good", "bad"]
+        }
+    }
+}
