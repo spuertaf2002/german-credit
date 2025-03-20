@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
+from pandas import DataFrame
 from pydantic import BaseModel
 
 
@@ -11,7 +12,7 @@ class BaseStep(ABC):
     name: str
 
     @abstractmethod
-    def run(self) -> Any:
+    def run(self, data: DataFrame | None = None) -> Any:
         """Executes the logic of the pipeline step.
 
         This method must be implemented by all concrete subclasses of BaseStep.
